@@ -1,0 +1,10 @@
+* {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.content {
+  padding-left: 14rem;
+  padding-right: 14rem;
+
+  border: 1px solid greenyellow;
+}
