@@ -2,14 +2,14 @@ import styles from "./home.module.css";
 
 const Home = () => (
   <>
-    <header className={styles.header}>
-      <h1 className={styles.logo}>kash.shop</h1>
-      <div>
-        <button>Home</button>
-        <button>About Us</button>
-        <button>Shop</button>
+    <article className={styles.content}>
+      <div className={styles.contentwrapper}>
+        <h1 className={styles.hometitle}>New shop New frontiers</h1>
+        <button className={styles.button} id={styles.mainbutton}>
+          Buy Now
+        </button>
       </div>
-    </header>
+    </article>
   </>
 );
 
