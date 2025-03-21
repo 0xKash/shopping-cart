@@ -1,6 +1,6 @@
 import styles from "./card.module.css";
 
-const Card = ({ title, description, price, image }) => {
+const Card = ({ title, price, image, action, value, onChange }) => {
   return (
     <article className={styles.card}>
       <div className={styles.imagewrapper}>
@@ -11,7 +11,15 @@ const Card = ({ title, description, price, image }) => {
 
         <div className={styles.buttonwrapper}>
           <h1>{price}$</h1>
-          <button className={styles.button}>Buy now</button>
+          <input
+            type="number"
+            className={styles.input}
+            value={value}
+            onChange={onChange}
+          />
+          <button className={styles.button} onClick={action}>
+            Add to cart
+          </button>
         </div>
       </div>
     </article>
