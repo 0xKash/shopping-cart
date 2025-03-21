@@ -1,6 +1,9 @@
+import { useState } from "react";
 import styles from "./card.module.css";
 
-const Card = ({ title, price, image, action, value, onChange }) => {
+const Card = ({ id, title, price, image, action }) => {
+  const [quantity, setQuantity] = useState(0);
+
   return (
     <article className={styles.card}>
       <div className={styles.imagewrapper}>
@@ -13,11 +16,18 @@ const Card = ({ title, price, image, action, value, onChange }) => {
           <h1>{price}$</h1>
           <input
             type="number"
+            min="1"
             className={styles.input}
-            value={value}
-            onChange={onChange}
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
           />
-          <button className={styles.button} onClick={action}>
+          <button
+            className={styles.button}
+            onClick={() => {
+              action(id, quantity);
+              setQuantity(0);
+            }}
+          >
             Add to cart
           </button>
         </div>
